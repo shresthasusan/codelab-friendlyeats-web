@@ -42,9 +42,6 @@ export async function addReviewToRestaurant(db, restaurantId, review) {
 }
 
 function applyQueryFilters(q, { category, city, price, sort }) {
-  return;
-}
-function applyQueryFilters(q, { category, city, price, sort }) {
   if (category) {
     q = query(q, where("category", "==", category));
   }
@@ -76,6 +73,10 @@ export async function getRestaurants(db = db, filters = {}) {
     };
   });
 }
+export function getRestaurantsSnapshot(cb, filters = {}) {
+  return;
+}
+
 export async function getRestaurantById(db, restaurantId) {
   if (!restaurantId) {
     console.log("Error: Invalid ID received: ", restaurantId);
